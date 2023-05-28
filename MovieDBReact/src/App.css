@@ -1,0 +1,7 @@
+#movie_container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 500px;
+  width: 90vw;
+  margin: 0 5vw;;
+}
