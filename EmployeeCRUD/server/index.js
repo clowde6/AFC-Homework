@@ -42,13 +42,20 @@ app.get("/", (req, res) => {
     // deals with any unmatched routes
     // right now - probably send a string back with comments
 
+
+
 //2) /employee/all --READ
-    // GET method
-    // send back JSON
-    // send back ALL employees from the DB
-    // send back an array of objects
+    // GET method - DONE
+    // send back JSON - DONE
+    // send back ALL employees from the DB - DONE
+    // send back an array of objects - DONE
 app.get("/employee/all", (req, res) => {
-    res.send("ALL EMPLOYEES")
+    let query = `SELECT *
+                 FROM employees;`
+    conn.query(query)
+    .then(data => {
+        res.json(data.rows)
+    }).catch(err => res.send(`Error reading data: ${err}`))
 })
 
 //3) /emplyee/new --CREATE
