@@ -85,6 +85,21 @@ app.get("/employee/all", (req, res) => {
     // send JSON
     // one thing - data that DB confirmed was updated
     // one object - BUT inittial return maybe an array of object
+    app.put("/employee/:id", (req, res) => {
+        const{first_name, last_name, age, salary} = req.body
+        let query = `UPDATE employees
+            SET first_name='${first_name}',
+                last_name='${last_name}',
+                age= ${age},
+                salary= ${salary}
+            WHERE employee_is = ${Number(req.params.id)}
+            RETURNING *;`
+            conn.query(query)
+    .then((data) => {
+        console.log("DATA has been updated in DB")
+        res.json(data.rows[0]);
+    }).catch(err => res.send(`Error updating data: ${err}`))
+    })
 
 
 //5) /employee/<<id>> - DELETE
