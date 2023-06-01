@@ -4,6 +4,7 @@ import Table from "./components/Table"
 import Landing from "./components/Landing"
 import Error from "./components/Error"
 import NavBar from "./components/NavBar"
+import Form from "./components/Form"
 import { ThemeProvider, Typography } from "@mui/material"
 import Theme from "./components/ui/Theme"
 
@@ -16,23 +17,22 @@ function App() {
   <>
   <ThemeProvider theme={Theme}>
     <Typography 
-      variant="h4"
+      variant="h1"
       sx={{color:"primary.main"
           // "&:hover" : {backgroundColor:"yellow"}
     }}
     >
-    <h1>Employees R' us</h1>
+    Employees R' us
     </Typography>
   <NavBar/>
 
   <Router>
-    <Link to="/employee/table">All Employees</Link>
-    <Link to="/">Landing Page</Link>
-    <Link to="/employee">Error Page</Link>
     <Routes>
       <Route exact path="/" element={<Landing/>}/>
       <Route path="/employee/table" element={<Table/>}/>
-      <Route path="/employee" element={<Error/>}/>
+      <Route path="/employee/new" element={<Form/>}/>
+      <Route path="/employee/3" element={<Form/>}/>
+      <Route path="/*" element={<Error/>}/>
     </Routes>
   </Router>
   </ThemeProvider>
