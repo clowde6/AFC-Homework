@@ -13,6 +13,7 @@ import Layout from "./components/Layout"
 
 // Styling imports
 import "./App.css"
+import Themes from "./components/ui/Themes";
 
 const  App = () => {
 
@@ -41,6 +42,9 @@ useEffect(() => {
 
 return (
   <>
+  <ThemeProvider theme={customTheme}>
+      {/* Your app content here */}
+    
   <Typography variant='h2' sx={
     {
       color:"orangered"
@@ -48,6 +52,7 @@ return (
       }
       >
   </Typography>
+  </ThemeProvider>
 <Router>
   <Routes>
     <Route path = "/" element = {<Layout setMovies={setMovies}/>}>

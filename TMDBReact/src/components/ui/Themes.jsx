@@ -1,11 +1,20 @@
-import { createTheme } from "@mui/material";
+import React from "react";
+import { createTheme, ThemeProvider } from "@mui/material";
 
-// https://mui.com/material-ui/customization/color/
-
-export default createTheme({
-    palette: {
-        primary: {
-            main: '#757ce8'
-        }
+const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#757ce8'
     }
-})
+  }
+});
+
+const App = () => {
+  return (
+    <ThemeProvider theme={customTheme}>
+      {/* Your app content here */}
+    </ThemeProvider>
+  );
+};
+
+export default Themes
