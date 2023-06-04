@@ -1,10 +1,11 @@
 //Imports
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+import axios from "axios"
+import { Typography } from '@mui/material'
+
 
 //Components
-import Card from './components/Card'
+// import Card from './components/Card'
 import NavBar from './components/NavBar'
 import Results from './components/Results'
 import Error from './components/Error'
@@ -14,6 +15,7 @@ import Theme from './components/Theme'
 import './App.css'
 
 function App() {
+  const {VITE_TMDB_API_KEY} = process.env
 
   return (
     <>
