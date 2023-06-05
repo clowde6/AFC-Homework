@@ -13,7 +13,7 @@ import Layout from "./components/Layout"
 
 // Styling imports
 import "./App.css"
-import Themes from "./components/ui/Themes";
+import { customTheme } from "./components/ui/Themes";
 
 const  App = () => {
 
