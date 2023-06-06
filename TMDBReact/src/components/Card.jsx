@@ -14,12 +14,14 @@ const MediaCard = (props) => {
         maxWidth: 500,
         display: "inline-block",
         borderRadius: "8px",
-        objectFit: "cover",
+        objectFit: "scale-down",
       }}
     >
       <CardMedia
         sx={{
           height: 400,
+          width: "100%",
+          objectFit: "scale-down",
         }}
         image={poster_path === null ? error_img : `${baseUrl}/${poster_path}`}
         title={title}
