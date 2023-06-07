@@ -21,7 +21,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <MenuIcon sx={{ color: "black" }} />
+        <MenuIcon sx={{ color: "white" }} />
         Dashboard
       </Button>
       <Menu

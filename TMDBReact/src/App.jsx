@@ -12,7 +12,7 @@ import Landing from "./components/Landing";
 
 // Styling imports
 import "./App.css";
-// import { customTheme } from './components/ui/Themes'
+import backgroundImage from "./assets/images/movie-background-collage.jpg";
 
 const customTheme = createTheme({
   palette: {
@@ -48,9 +48,6 @@ const App = () => {
 
   return (
     <>
-      {/* <ThemeProvider theme={customTheme}> */}
-      {/* Your app content here */}
-
       <Typography
         variant="h2"
         sx={{
