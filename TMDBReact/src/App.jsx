@@ -1,6 +1,5 @@
 // Functional imports
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { ThemeProvider, Typography, createTheme } from "@mui/material";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -12,15 +11,9 @@ import Landing from "./components/Landing";
 
 // Styling imports
 import "./App.css";
-import backgroundImage from "./assets/images/movie-background-collage.jpg";
+import { ThemeProvider, Typography, createTheme } from "@mui/material";
 
-const customTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#757ce8",
-    },
-  },
-});
+const customTheme = createTheme;
 
 const App = () => {
   const { VITE_TMDB_API_KEY } = process.env;

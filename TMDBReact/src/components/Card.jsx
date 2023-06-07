@@ -11,7 +11,8 @@ const MediaCard = (props) => {
   return (
     <Card
       sx={{
-        maxWidth: 500,
+        maxWidth: 400, // Set the maximum width of the card
+        height: 600, // Set the height of the card
         display: "inline-block",
         borderRadius: "8px",
         objectFit: "scale-down",
@@ -19,9 +20,9 @@ const MediaCard = (props) => {
     >
       <CardMedia
         sx={{
-          height: 400,
+          height: "60%", // Set the height of the media
           width: "100%",
-          objectFit: "scale-down",
+          objectFit: "cover",
         }}
         image={poster_path === null ? error_img : `${baseUrl}/${poster_path}`}
         title={title}

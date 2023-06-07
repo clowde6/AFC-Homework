@@ -90,12 +90,12 @@ export default function Navbar(props) {
             sx={{ mr: 2 }}
           ></BasicMenu>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Movie Website
+            Movie Database Website with React
           </Typography>
           <Search>
             <SearchIconWrapper>
