@@ -9,7 +9,6 @@ import BasicMenu from "./BasicMenu";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import Landing from "./Landing";
 import { Button } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
