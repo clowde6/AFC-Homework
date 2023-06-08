@@ -11,19 +11,15 @@ import Landing from "./components/Landing";
 
 // Styling imports
 import "./App.css";
-import { ThemeProvider, Typography, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material";
 
+// Custom theme creation
 const customTheme = createTheme;
 
+/* Main component representing the application.*/
 const App = () => {
   const { VITE_TMDB_API_KEY } = process.env;
-  const movieArray = [
-    {
-      title: "Test Movie",
-      imagePath: "",
-      overview: "A test movie with nothing interesting about it",
-    },
-  ];
+  const movieArray = [];
 
   // Initial state of movies is fake data movieArray data
   const [movies, setMovies] = useState(movieArray);
@@ -41,13 +37,6 @@ const App = () => {
 
   return (
     <>
-      <Typography
-        variant="h2"
-        sx={{
-          color: "orangered",
-        }}
-      ></Typography>
-      {/* </ThemeProvider> */}
       <ThemeProvider theme={customTheme}>
         <Router>
           <Routes>
