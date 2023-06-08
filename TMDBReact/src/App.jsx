@@ -11,10 +11,6 @@ import Error from "./components/Error";
 
 // Styling imports
 import "./App.css";
-import { ThemeProvider, createTheme } from "@mui/material";
-
-// Custom theme creation
-const theme = createTheme;
 
 /* Main component representing the application.*/
 const App = () => {
