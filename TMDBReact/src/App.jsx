@@ -25,6 +25,7 @@ const App = () => {
   const [movies, setMovies] = useState(movieArray);
 
   useEffect(() => {
+    // Fetch movie data from the API
     let endpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${VITE_TMDB_API_KEY}`;
     axios
       .get(endpoint)
@@ -37,10 +38,14 @@ const App = () => {
 
   return (
     <>
+      {/* Theme provider for Material-UI */}
       <ThemeProvider theme={customTheme}>
         <Router>
+          {/* Routes for different components */}
           <Routes>
+            {/* Default route */}
             <Route path="/" element={<Layout setMovies={setMovies} />}>
+              {/* Nested routes */}
               <Route index element={<Landing />} />
               <Route path="movies/new" element={<Results data={movies} />} />
               <Route path="*" element={<Error />} />
