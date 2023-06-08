@@ -14,7 +14,7 @@ import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material";
 
 // Custom theme creation
-const customTheme = createTheme;
+const theme = createTheme;
 
 /* Main component representing the application.*/
 const App = () => {
@@ -38,21 +38,18 @@ const App = () => {
 
   return (
     <>
-      {/* Theme provider for Material-UI */}
-      <ThemeProvider theme={customTheme}>
-        <Router>
-          {/* Routes for different components */}
-          <Routes>
-            {/* Default route */}
-            <Route path="/" element={<Layout setMovies={setMovies} />}>
-              {/* Nested routes */}
-              <Route index element={<Landing />} />
-              <Route path="movies/new" element={<Results data={movies} />} />
-              <Route path="*" element={<Error />} />
-            </Route>
-          </Routes>
-        </Router>
-      </ThemeProvider>
+      <Router>
+        {/* Routes for different components */}
+        <Routes>
+          {/* Default route */}
+          <Route path="/" element={<Layout setMovies={setMovies} />}>
+            {/* Nested routes */}
+            <Route index element={<Landing />} />
+            <Route path="movies/new" element={<Results data={movies} />} />
+            <Route path="*" element={<Error />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 };

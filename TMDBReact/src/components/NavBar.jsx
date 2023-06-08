@@ -10,6 +10,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import theme from "./ui/Themes";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -79,60 +81,62 @@ export default function Navbar(props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      {/* style={{ bgcolor: theme.palette.primary.main }} */}
-      <AppBar positionmode="sticky">
-        <Toolbar>
-          <BasicMenu
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          ></BasicMenu>
-          <Typography
-            variant="h4"
-            noWrap
-            component="div"
-            sx={{
-              flexGrow: 1,
-              color: "white",
-              display: { xs: "none", sm: "block" },
-            }}
-          >
-            <Link
-              to="/"
+    <ThemeProvider theme={theme}>
+      <Box sx={{ flexGrow: 1 }}>
+        {/* style={{ bgcolor: theme.palette.primary.main }} */}
+        <AppBar positionmode="sticky">
+          <Toolbar>
+            <BasicMenu
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            ></BasicMenu>
+            <Typography
+              variant="h4"
+              noWrap
+              component="div"
               sx={{
-                textDecoration: "none",
+                flexGrow: 1,
                 color: "white",
-                fontWeight: "bold",
+                display: { xs: "none", sm: "block" },
               }}
             >
-              <Button
+              <Link
+                to="/"
                 sx={{
+                  textDecoration: "none",
                   color: "white",
-                  fontSize: "30px",
-                  backgroundColor: "transparent",
-                  opcity: 0.8,
+                  fontWeight: "bold",
                 }}
               >
-                Movie Database Website with React
-              </Button>
-            </Link>
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-              onChange={handleChange}
-              onKeyDown={handleEnter}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: "30px",
+                    backgroundColor: "transparent",
+                    opcity: 0.8,
+                  }}
+                >
+                  Movie Database Website with React
+                </Button>
+              </Link>
+            </Typography>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+                onChange={handleChange}
+                onKeyDown={handleEnter}
+              />
+            </Search>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </ThemeProvider>
   );
 }
