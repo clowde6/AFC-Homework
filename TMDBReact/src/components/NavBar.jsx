@@ -8,7 +8,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import BasicMenu from "./BasicMenu";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import Landing from "./Landing";
+import { Button } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -79,7 +81,7 @@ export default function Navbar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      {/* style={{bgcolor: theme.palette.primary.main}} */}
+      {/* style={{ bgcolor: theme.palette.primary.main }} */}
       <AppBar positionmode="sticky">
         <Toolbar>
           <BasicMenu
@@ -93,9 +95,31 @@ export default function Navbar(props) {
             variant="h4"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              color: "white",
+              display: { xs: "none", sm: "block" },
+            }}
           >
-            Movie Database Website with React
+            <Link
+              to="/"
+              sx={{
+                textDecoration: "none",
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              <Button
+                sx={{
+                  color: "white",
+                  fontSize: "30px",
+                  backgroundColor: "transparent",
+                  opcity: 0.8,
+                }}
+              >
+                Movie Database Website with React
+              </Button>
+            </Link>
           </Typography>
           <Search>
             <SearchIconWrapper>

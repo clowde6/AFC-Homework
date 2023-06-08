@@ -11,23 +11,25 @@ const MediaCard = (props) => {
   return (
     <Card
       sx={{
-        maxWidth: 400, // Set the maximum width of the card
-        height: 600, // Set the height of the card
+        width: "calc(30% - 16px)", // Set the width to 50% minus the horizontal margins (16px)
         display: "inline-block",
         borderRadius: "8px",
         objectFit: "scale-down",
+        margin: "8px", // Add horizontal margins
       }}
     >
       <CardMedia
         sx={{
-          height: "60%", // Set the height of the media
-          width: "100%",
-          objectFit: "cover",
+          height: 0,
+          paddingTop: "100%", // Maintain a square aspect ratio
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
         }}
         image={poster_path === null ? error_img : `${baseUrl}/${poster_path}`}
         title={title}
       />
-      <CardContent sx={{ height: 300, overflowY: "scroll" }}>
+      <CardContent sx={{ height: 250, overflowY: "scroll" }}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>

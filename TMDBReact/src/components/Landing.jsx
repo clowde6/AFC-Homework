@@ -1,8 +1,14 @@
+import * as React from "react";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+
 const Landing = (props) => {
   return (
     <>
       <h1> Welcome to this Movie Database </h1>
-      <h1> What would you like to see now?</h1>
+      <Link to="/movies/new">
+        <Button variant="contained">Now Playing</Button>
+      </Link>
     </>
   );
 };
