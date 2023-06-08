@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 // Components imports
-import Error from "./components/Error";
 import Results from "./components/Results";
-import Layout from "./components/Layout";
 import Landing from "./components/Landing";
+import Layout from "./components/Layout";
+import Error from "./components/Error";
 
 // Styling imports
 import "./App.css";
